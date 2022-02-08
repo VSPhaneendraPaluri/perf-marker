@@ -1,20 +1,17 @@
 cmake_minimum_required(VERSION 3.10)
 
-set(${PROJECT_NAME} runner)
+set(PROJECT_NAME containers)
 
 set(
   SOURCES
-  main.cpp
+  vector/vector.cpp
+  vector/vector.h
+  vector/vectorBenchmarker.h
 )
 
-add_executable(${PROJECT_NAME} ${SOURCES})
+add_library(${PROJECT_NAME} ${SOURCES})
 
-add_dependencies(
-  ${PROJECT_NAME}
-  nuget-restore
-  containers
-  utilities
-)
+add_dependencies(${PROJECT_NAME} utilities nuget-restore)
 
 set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER sources)
 
@@ -25,6 +22,6 @@ target_link_libraries(${PROJECT_NAME}
   ${GOOGLE_BENCHMARK_LIBRARY_DIR}/benchmarkd.lib
   ${GOOGLE_BENCHMARK_LIBRARY_DIR}/benchmark_maind.lib
   ShLwApi.lib
-  containers
   utilities
 )
+

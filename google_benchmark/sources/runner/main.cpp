@@ -1,39 +1,13 @@
-#include "vector.h"
+#include "vector/vectorBenchmarker.h"
 
 #include <benchmark/benchmark.h>
 
-#include <array>
-#include <iostream>
-
-static void VectorInsertInOrder(benchmark::State& state)
-{
-  Vector vec{};
-  vec.resize(Vector::maxItems_);
-  for (auto _ : state)
-  {
-    vec.insertInOrder();
-  }
-}
-
-static void VectorInsertAtRandom(benchmark::State& state)
-{
-  Vector vec{};
-  vec.resize(Vector::maxItems_);
-  Rng rng{};
-  uint32_t indexArray[Vector::maxItems_];
-  for (auto index = 0; index < Vector::maxItems_; index++)
-  {
-    std::size_t random_position = rng.getRandomNumber() % Vector::maxItems_;
-    indexArray[index] = random_position;
-  }
-  for (auto _ : state)
-  {
-    vec.insertAtRandom(indexArray);
-  }
-}
-
-
-BENCHMARK(VectorInsertInOrder);
-BENCHMARK(VectorInsertAtRandom);
+// Vector
+BENCHMARK(VectorinsertFromTheBeginningInOrder)->Iterations(1);
+BENCHMARK(VectorinsertFromTheEndInOrder)->Iterations(1);
+BENCHMARK(VectorinsertFromTheBeginningAtRandom)->Iterations(1);
+BENCHMARK(VectorinsertFromTheEndAtRandom)->Iterations(1);
+BENCHMARK(VectorPushBack)->Iterations(1);
+BENCHMARK(VectorEmplaceBack)->Iterations(1);
 
 BENCHMARK_MAIN();

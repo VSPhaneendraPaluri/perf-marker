@@ -10,8 +10,12 @@ public:
   Vector() = default;
   void resize(uint32_t size);
 
-  void insertInOrder();
-  void insertAtRandom(uint32_t * indexArray);
+  void insertFromTheBeginningInOrder();
+  void insertFromTheEndInOrder();
+  void insertFromTheBeginningAtRandom(uint32_t * indexArray);
+  void insertFromTheEndAtRandom(uint32_t* indexArray);
+  void pushBack();
+  void emplaceBack();
 
   static constexpr uint32_t maxItems_{ 100000 };
 
