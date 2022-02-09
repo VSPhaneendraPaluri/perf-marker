@@ -1,3 +1,5 @@
+#pragma once
+
 #include <stddef.h>
 #include <random>
 #include <limits>

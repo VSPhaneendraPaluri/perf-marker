@@ -3,23 +3,25 @@
 #include "common/defines.h"
 
 #include <stdint.h>
-#include <vector>
+#include <deque>
 
-class Vector
+class Deque
 {
 public:
-  Vector() = default;
+  Deque() = default;
   void resize(uint32_t size);
 
   void insertFromTheBeginningInOrder();
   void insertFromTheEndInOrder();
-  void insertFromTheBeginningAtRandom(uint32_t * indexArray);
+  void insertFromTheBeginningAtRandom(uint32_t* indexArray);
   void insertFromTheEndAtRandom(uint32_t* indexArray);
   void pushBack();
+  void pushFront();
   void emplaceBack();
+  void emplaceFront();
 
   static constexpr uint32_t maxItems_{ common::MAX_SIZE };
 
 private:
-  std::vector<uint32_t> vec_{};
+  std::deque<uint32_t> deq_{};
 };

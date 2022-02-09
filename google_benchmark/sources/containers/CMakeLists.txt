@@ -4,6 +4,10 @@ set(PROJECT_NAME containers)
 
 set(
   SOURCES
+  common/defines.h
+  deque/deque.cpp
+  deque/deque.h
+  deque/dequeBenchmarker.h
   vector/vector.cpp
   vector/vector.h
   vector/vectorBenchmarker.h

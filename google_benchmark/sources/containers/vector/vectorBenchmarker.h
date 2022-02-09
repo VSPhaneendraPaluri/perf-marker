@@ -1,10 +1,11 @@
 #pragma once
 
 #include "vector.h"
+#include "random_number_generator/rng.h"
 
 #include <benchmark/benchmark.h>
 
-static void VectorinsertFromTheBeginningInOrder(benchmark::State& state)
+static void VectorInsertFromTheBeginningInOrder(benchmark::State& state)
 {
   Vector vec{};
   vec.resize(Vector::maxItems_);
@@ -16,7 +17,7 @@ static void VectorinsertFromTheBeginningInOrder(benchmark::State& state)
   }
 }
 
-static void VectorinsertFromTheEndInOrder(benchmark::State& state)
+static void VectorInsertFromTheEndInOrder(benchmark::State& state)
 {
   Vector vec{};
   vec.resize(Vector::maxItems_);
@@ -28,7 +29,7 @@ static void VectorinsertFromTheEndInOrder(benchmark::State& state)
   }
 }
 
-static void VectorinsertFromTheBeginningAtRandom(benchmark::State& state)
+static void VectorInsertFromTheBeginningAtRandom(benchmark::State& state)
 {
   Vector vec{};
   vec.resize(Vector::maxItems_);
@@ -49,7 +50,7 @@ static void VectorinsertFromTheBeginningAtRandom(benchmark::State& state)
   }
 }
 
-static void VectorinsertFromTheEndAtRandom(benchmark::State& state)
+static void VectorInsertFromTheEndAtRandom(benchmark::State& state)
 {
   Vector vec{};
   vec.resize(Vector::maxItems_);
