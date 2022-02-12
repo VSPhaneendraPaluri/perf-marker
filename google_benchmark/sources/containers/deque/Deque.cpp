@@ -3,6 +3,11 @@
 
 #include <iostream>
 
+void Deque::clear()
+{
+  deq_.clear();
+}
+
 void Deque::resize(uint32_t size)
 {
   deq_.clear();

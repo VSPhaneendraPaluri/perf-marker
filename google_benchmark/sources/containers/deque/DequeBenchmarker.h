@@ -1,14 +1,15 @@
 #pragma once
 
 #include "Deque.h"
-#include "random_number_generator/rng.h"
+#include "random_number_generator/Rng.h"
 
 #include <benchmark/benchmark.h>
 
 static void DequeInsertFromTheBeginningInOrder(benchmark::State& state)
 {
   Deque deq{};
-  deq.resize(Deque::maxItems_);
+  deq.clear();
+  //deq.resize(Deque::maxItems_);
 
   for (auto _ : state)
   {
@@ -20,7 +21,7 @@ static void DequeInsertFromTheBeginningInOrder(benchmark::State& state)
 static void DequeInsertFromTheEndInOrder(benchmark::State& state)
 {
   Deque deq{};
-  deq.resize(Deque::maxItems_);
+  deq.clear();
 
   for (auto _ : state)
   {
@@ -32,6 +33,7 @@ static void DequeInsertFromTheEndInOrder(benchmark::State& state)
 static void DequeInsertFromTheBeginningAtRandom(benchmark::State& state)
 {
   Deque deq{};
+  deq.clear();
   deq.resize(Deque::maxItems_);
 
   for (auto _ : state)
@@ -53,6 +55,7 @@ static void DequeInsertFromTheBeginningAtRandom(benchmark::State& state)
 static void DequeInsertFromTheEndAtRandom(benchmark::State& state)
 {
   Deque deq{};
+  deq.clear();
   deq.resize(Deque::maxItems_);
 
   for (auto _ : state)
@@ -74,7 +77,7 @@ static void DequeInsertFromTheEndAtRandom(benchmark::State& state)
 static void DequePushBack(benchmark::State& state)
 {
   Deque deq{};
-  deq.resize(Deque::maxItems_);
+  deq.clear();
 
   for (auto _ : state)
   {
@@ -85,7 +88,7 @@ static void DequePushBack(benchmark::State& state)
 static void DequePushFront(benchmark::State& state)
 {
   Deque deq{};
-  deq.resize(Deque::maxItems_);
+  deq.clear();
 
   for (auto _ : state)
   {
@@ -97,7 +100,7 @@ static void DequePushFront(benchmark::State& state)
 static void DequeEmplaceBack(benchmark::State& state)
 {
   Deque deq{};
-  deq.resize(Deque::maxItems_);
+  deq.clear();
 
   for (auto _ : state)
   {
@@ -109,7 +112,7 @@ static void DequeEmplaceBack(benchmark::State& state)
 static void DequeEmplaceFront(benchmark::State& state)
 {
   Deque deq{};
-  deq.resize(Deque::maxItems_);
+  deq.clear();
 
   for (auto _ : state)
   {

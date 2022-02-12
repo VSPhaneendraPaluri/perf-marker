@@ -1,4 +1,4 @@
-#include "rng.h"
+#include "Rng.h"
 
 uint32_t Rng::getRandomNumber()
 {

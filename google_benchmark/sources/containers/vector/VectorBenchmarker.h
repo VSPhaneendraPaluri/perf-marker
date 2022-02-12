@@ -1,14 +1,14 @@
 #pragma once
 
-#include "vector.h"
-#include "random_number_generator/rng.h"
+#include "Vector.h"
+#include "random_number_generator/Rng.h"
 
 #include <benchmark/benchmark.h>
 
 static void VectorInsertFromTheBeginningInOrder(benchmark::State& state)
 {
   Vector vec{};
-  vec.resize(Vector::maxItems_);
+  vec.clear();
 
   for (auto _ : state)
   {
@@ -20,7 +20,7 @@ static void VectorInsertFromTheBeginningInOrder(benchmark::State& state)
 static void VectorInsertFromTheEndInOrder(benchmark::State& state)
 {
   Vector vec{};
-  vec.resize(Vector::maxItems_);
+  vec.clear();
 
   for (auto _ : state)
   {
@@ -32,6 +32,7 @@ static void VectorInsertFromTheEndInOrder(benchmark::State& state)
 static void VectorInsertFromTheBeginningAtRandom(benchmark::State& state)
 {
   Vector vec{};
+  vec.clear();
   vec.resize(Vector::maxItems_);
 
   for (auto _ : state)
@@ -53,6 +54,7 @@ static void VectorInsertFromTheBeginningAtRandom(benchmark::State& state)
 static void VectorInsertFromTheEndAtRandom(benchmark::State& state)
 {
   Vector vec{};
+  vec.clear();
   vec.resize(Vector::maxItems_);
 
   for (auto _ : state)
@@ -74,7 +76,7 @@ static void VectorInsertFromTheEndAtRandom(benchmark::State& state)
 static void VectorPushBack(benchmark::State& state)
 {
   Vector vec{};
-  vec.resize(Vector::maxItems_);
+  vec.clear();
 
   for (auto _ : state)
   {
@@ -86,7 +88,7 @@ static void VectorPushBack(benchmark::State& state)
 static void VectorEmplaceBack(benchmark::State& state)
 {
   Vector vec{};
-  vec.resize(Vector::maxItems_);
+  vec.clear();
 
   for (auto _ : state)
   {

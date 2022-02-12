@@ -1,11 +1,15 @@
-#include "vector.h"
+#include "Vector.h"
 #include <assert.h>
 
 #include <iostream>
 
-void Vector::resize(uint32_t size)
+void Vector::clear()
 {
   vec_.clear();
+}
+
+void Vector::resize(uint32_t size)
+{
   vec_.resize(size);
   assert(vec_.capacity() == vec_.size(), "Vector capacity != size");
 }

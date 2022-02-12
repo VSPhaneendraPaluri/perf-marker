@@ -4,13 +4,16 @@ set(PROJECT_NAME containers)
 
 set(
   SOURCES
-  common/defines.h
-  deque/deque.cpp
-  deque/deque.h
-  deque/dequeBenchmarker.h
-  vector/vector.cpp
-  vector/vector.h
-  vector/vectorBenchmarker.h
+  common/Defines.h
+  deque/Deque.cpp
+  deque/Deque.h
+  deque/DequeBenchmarker.h
+  forward_list/ForwardList.cpp
+  forward_list/ForwardList.h
+  forward_list/ForwardListBenchmarker.h
+  vector/Vector.cpp
+  vector/Vector.h
+  vector/VectorBenchmarker.h
 )
 
 add_library(${PROJECT_NAME} ${SOURCES})

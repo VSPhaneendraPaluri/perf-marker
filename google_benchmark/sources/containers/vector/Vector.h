@@ -1,27 +1,26 @@
 #pragma once
 
-#include "common/defines.h"
+#include "common/Defines.h"
 
 #include <stdint.h>
-#include <deque>
+#include <vector>
 
-class Deque
+class Vector
 {
 public:
-  Deque() = default;
+  Vector() = default;
+  void clear();
   void resize(uint32_t size);
 
   void insertFromTheBeginningInOrder();
   void insertFromTheEndInOrder();
-  void insertFromTheBeginningAtRandom(uint32_t* indexArray);
+  void insertFromTheBeginningAtRandom(uint32_t * indexArray);
   void insertFromTheEndAtRandom(uint32_t* indexArray);
   void pushBack();
-  void pushFront();
   void emplaceBack();
-  void emplaceFront();
 
   static constexpr uint32_t maxItems_{ common::MAX_SIZE };
 
 private:
-  std::deque<uint32_t> deq_{};
+  std::vector<uint32_t> vec_{};
 };
